@@ -1,8 +1,10 @@
 <% include header %>
   <title><%= title%></title>
+  <link rel="stylesheet" href="/css/wangEditor.css">
+  <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -12,23 +14,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/admin">Home</a>
+      <a class="navbar-brand active" href="/admin">Home</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="/">首页 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
+        <li class=""><a href="/">首页 <span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">修改密码</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">暂未功能</a></li>
+            <li><a href="#">暂未功能</a></li>
+            <li><a href="#">暂未功能</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="/signout">退出登陆</a></li>
           </ul>
@@ -37,6 +37,38 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
+<div class="wrap">
+<div class="sidbar pull-left">
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" data-parent="false">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">内容管理</a>
+      </h4>
+    </div>
+  </div>
+  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div class="panel-body penel-z">
+      <div class="panel-content">
+        <a href="#">新建文章</a>
+        <a href="#">文章管理</a>
+        <a href="#">留言管理</a>
+        <a href="#">案例中心</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="editor-wrap">
+  <div id="editortitle" class="input-group">
+    <input type="text" class="form-control" aria-label="...">
+  </div>
+  <div id="editor">
+    <p>请输入内容</p>
+  </div>
+</div>
+</div>
+<script src="/js/jquery-2.2.1.js"></script>
+<script src="/js/wangEditor.js"></script>
+<script src="/js/admin.js"></script>
 <% include footer %>

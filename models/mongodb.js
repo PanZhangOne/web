@@ -4,11 +4,11 @@ const config = require('../config/config');
 mongoose.connect(config.mongodb);
 const db = mongoose.connection;
 
-db.on('error', console.log.bind(console, '链接数据库错误'));
+db.on('error', console.log.bind(console, 'connect mongodb error...'));
 db.once('open', (cb) => {
-  console.log('链接数据库成功');
+  console.log('success connected mongodb....');
 });
-
+// 管理员
 const adminSchema = new mongoose.Schema({
   name: String,
   password: String,
@@ -16,9 +16,8 @@ const adminSchema = new mongoose.Schema({
 });
 
 const userModel = mongoose.model('user', adminSchema);
-
 exports.userModel = userModel;
-
+// 文章
 const postSchema = new mongoose.Schema({
   title: String,
   content: String,
@@ -27,8 +26,19 @@ const postSchema = new mongoose.Schema({
   good: Boolean,
   bulletin: Boolean,
   time: Date
-})
+});
 
 const postModel = mongoose.model('post', postSchema);
 
 exports.postModel = postModel;
+
+// 客户案例
+const showInfoSchema = new mongoose.Schema({
+  title: String,
+  content: String,
+  time: String
+});
+const showInfoModel = mongoose.model('showinfo', showInfoSchema);
+exports.showInfoModel = showInfoModel;
+
+// 关于我们

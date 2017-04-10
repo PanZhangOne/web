@@ -1,0 +1,21 @@
+.navbar {
+  margin-bottom: 0;
+}
+.sidbar {
+  position: absolute;
+  width: 250px;
+  height: 100%;
+}
+.penel-z{
+  padding: 5px 10px;
+}
+.panel-content a {
+  display: block;
+}
+.wrap {
+  width: 1300px;
+  margin: 0 auto;
+}
+.editor-wrap {
+  margin-left: 265px;
+}
