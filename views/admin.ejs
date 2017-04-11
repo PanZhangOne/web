@@ -60,12 +60,19 @@
 </div>
 </div>
 <div class="editor-wrap">
-  <div id="editortitle" class="input-group">
-    <input type="text" class="form-control" aria-label="...">
+  <div class="input-group">
+    <input id="editortitle" type="text" class="form-control" aria-label="...">
+    <select name="select" id="select">
+      <option value="ordinary">普通</option>
+      <option value="good">精华</option>
+      <option value="top">置顶</option>
+      <option value="bulletin">公告</option>
+    </select>
   </div>
   <div id="editor">
     <p>请输入内容</p>
   </div>
+  <input type="button" value="提交" id="submitbtn">
 </div>
 </div>
 <script src="/js/jquery-2.2.1.js"></script>

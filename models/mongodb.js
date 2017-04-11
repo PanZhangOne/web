@@ -21,10 +21,11 @@ exports.userModel = userModel;
 const postSchema = new mongoose.Schema({
   title: String,
   content: String,
-  pv: Number,
-  top: Boolean,
-  good: Boolean,
-  bulletin: Boolean,
+  pv: Number, // 阅读量
+  ordinary:Boolean, // 普通文章
+  top: Boolean, // 置顶文章
+  good: Boolean, // 精华
+  bulletin: Boolean, // 公告
   time: Date
 });
 
@@ -42,3 +43,13 @@ const showInfoModel = mongoose.model('showinfo', showInfoSchema);
 exports.showInfoModel = showInfoModel;
 
 // 关于我们
+// 留言
+const leaveMessageSchema = mongoose.Schema({
+  name: String,
+  tel: String,
+  time: Date,
+  operate: Boolean
+});
+
+const leaveMessageModel = mongoose.model('leavemessage', leaveMessageSchema);
+exports.leaveMessageModel = leaveMessageModel;
