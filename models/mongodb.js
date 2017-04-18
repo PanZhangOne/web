@@ -48,7 +48,8 @@ const leaveMessageSchema = mongoose.Schema({
   name: String,
   tel: String,
   time: Date,
-  operate: Boolean
+  operate: Boolean,
+  call: Boolean
 });
 
 const leaveMessageModel = mongoose.model('leavemessage', leaveMessageSchema);

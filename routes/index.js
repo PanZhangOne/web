@@ -6,5 +6,4 @@ module.exports = (app) => {
   app.use('/upload', require('./upload'))
   app.use('/posts', require('./posts'))
   app.use('/leave', require('./leave'))
-  app.use('/allposts', require('./allposts'))
 }
