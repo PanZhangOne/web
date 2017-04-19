@@ -1,4 +1,9 @@
-'use strict';
+/**
+ * Created by zone0 on 2017/4/19.
+ */
+window.onload = () => {
+  showDiv()
+}
 
 function showDiv() {
   let items = document.getElementsByClassName('js-list');
@@ -14,4 +19,3 @@ function showDiv() {
     }
   }
 }
-showDiv();

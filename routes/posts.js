@@ -8,7 +8,7 @@ const postModel = require('../models/mongodb').postModel;
 router.get('/', checkLogin, (req, res, next) => {
   postModel.find((err, doc) => {
     if (err) return console.log(err)
-    res.render('allposts', {
+    res.render('posts', {
       title: '文章管理',
       doc: doc
     })

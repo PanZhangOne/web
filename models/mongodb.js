@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 const mongoose = require('mongoose');
 const config = require('../config/config');
 mongoose.connect(config.mongodb);
@@ -22,7 +22,7 @@ const postSchema = new mongoose.Schema({
   title: String,
   content: String,
   pv: Number, // 阅读量
-  ordinary:Boolean, // 普通文章
+  ordinary: Boolean, // 普通文章
   top: Boolean, // 置顶文章
   good: Boolean, // 精华
   bulletin: Boolean, // 公告
@@ -30,26 +30,25 @@ const postSchema = new mongoose.Schema({
 });
 
 const postModel = mongoose.model('post', postSchema);
-
 exports.postModel = postModel;
 
-// 客户案例
+// 项目展示
 const showInfoSchema = new mongoose.Schema({
-  title: String,
-  content: String,
-  time: String
+  title: String,  // 标题
+  content: String,  // 内容
+  time: String,  // 时间
+  index: Boolean  // 是否展示到首页
 });
 const showInfoModel = mongoose.model('showinfo', showInfoSchema);
 exports.showInfoModel = showInfoModel;
 
-// 关于我们
 // 留言
 const leaveMessageSchema = mongoose.Schema({
-  name: String,
-  tel: String,
-  time: Date,
-  operate: Boolean,
-  call: Boolean
+  name: String,  // 留言者姓名
+  tel: String,  // 联系方式
+  time: Date,  // 时间
+  operate: Boolean, // 操作
+  call: Boolean  // 是否回访
 });
 
 const leaveMessageModel = mongoose.model('leavemessage', leaveMessageSchema);

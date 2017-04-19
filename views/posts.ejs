@@ -1,11 +1,11 @@
 <% include header %>
-  <title><%= title%></title>
-  <link rel="stylesheet" href="/css/wangEditor.css">
-  <link rel="stylesheet" href="/css/admin.css">
+<title><%= title%></title>
+<link rel="stylesheet" href="/css/wangEditor.css">
+<link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
 <!--顶部导航开始-->
-  <nav class="navbar navbar-default navbar-inverse">
+<nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -16,6 +16,8 @@
       </button>
       <a class="navbar-brand active" href="/admin">Home</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class=""><a href="/">首页 <span class="sr-only">(current)</span></a></li>
@@ -45,7 +47,7 @@
           <a href="javascript:void(0)">文章管理</a>
           <ul class="admin-sidebar-sub" style="display:none;">
             <li>
-              <a href="/posts">新建文章</a>
+              <a href="#">新建文章</a>
             </li>
             <li>
               <a href="#">管理中心</a>
@@ -99,12 +101,13 @@
     <div class="ad-content-body">
       <div class="body-header">
         <div class="bh-nav">
-          <strong>首页</strong>/ <small>快速入口</small>
+          <strong>文章</strong>/ <small>新建文章</small>
         </div>
       </div>
     </div>
   </div>
 </div>
 <script src="/js/jquery-2.2.1.js"></script>
-<script src="/js/admin.js"></script>
+<script src="/js/wangEditor.js"></script>
+<script src="/js/posts.js"></script>
 <% include footer %>

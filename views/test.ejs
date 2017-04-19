@@ -1,12 +1,10 @@
-<% include header %>
-  <title><%= title%></title>
-  <link rel="stylesheet" href="/css/wangEditor.css">
-  <link rel="stylesheet" href="/css/admin.css">
+<% include header%>
+<title><%= title%></title>
 </head>
 <body>
-  <nav class="navbar navbar-default navbar-inverse">
+<!--顶部导航开始-->
+<nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -31,30 +29,12 @@
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
+<!--顶部导航结束-->
 <div class="wrap">
-<div class="sidbar pull-left">
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" data-parent="false">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">内容管理</a>
-      </h4>
-    </div>
-  </div>
-  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-    <div class="panel-body penel-z">
-      <div class="panel-content">
-        <a href="/admin">新建文章</a>
-        <a href="/posts">文章管理</a>
-        <a href="#">留言管理</a>
-        <a href="#">案例中心</a>
-      </div>
-    </div>
-  </div>
+  <div class="sidebar"></div>
+  <div class="content"></div>
 </div>
-</div>
-<script src="/js/jquery-2.2.1.js"></script>
 <% include footer %>
