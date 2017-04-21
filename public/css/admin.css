@@ -1,3 +1,6 @@
+html, body {
+  height: 100%;
+}
 .navbar {
   margin-bottom: 0;
 }
@@ -12,14 +15,7 @@
 .panel-content a {
   display: block;
 }
-.none {
-  display: none;
-}
-.show {
-  display: block;
-}
 .wrap {
-  position: absolute;
   height: 100%;
   background: #f3f3f3;
   overflow: auto;
@@ -128,6 +124,7 @@ admin-sidebar,.admin-content {
 
 .body-header {
   padding: 1.6rem;
+  border-bottom: 1px solid #009926;
 }
 
 .body-header strong {

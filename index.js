@@ -15,6 +15,7 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 // 设置静态文件夹
 app.use(express.static('./public'));
+// app.use(express.static('./uploadfiles'));
 // session 中间件
 app.use(session({
   name: config.session.key,

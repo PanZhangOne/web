@@ -1,0 +1,31 @@
+body {
+  min-width: 1200px;
+}
+
+/************
+  编辑器CSS样式
+*************/
+
+.title > input {
+  width: 80%;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+  margin-left: 0;
+}
+
+.title > select {
+  width: 8%;
+  height: 34px;
+  border: 1px solid #ccc;
+}
+
+.title > button {
+  width: 5%;
+  height: 34px;
+  border: 1px;
+  color: white;
+  background-color: darkcyan;
+}

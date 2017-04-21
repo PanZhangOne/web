@@ -2,8 +2,12 @@
  * Created by zone0 on 2017/4/19.
  */
 window.onload = () => {
-  showDiv()
-}
+  showDiv();
+  let editorDiv = document.getElementById('editor');
+  let editor = new wangEditor(editorDiv);
+  editor.config.uploadImgUrl = '/upload';
+  editor.create();
+};
 
 function showDiv() {
   let items = document.getElementsByClassName('js-list');
@@ -19,3 +23,4 @@ function showDiv() {
     }
   }
 }
+

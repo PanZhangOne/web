@@ -8,7 +8,7 @@ db.on('error', console.log.bind(console, 'connect mongodb error...'));
 db.once('open', (cb) => {
   console.log('success connected mongodb....');
 });
-// 管理员
+// 管理员账号
 const adminSchema = new mongoose.Schema({
   name: String,
   password: String,

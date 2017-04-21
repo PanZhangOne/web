@@ -9,7 +9,7 @@ router.get('/', checkLogin, (req, res, next) => {
   postModel.find((err, doc) => {
     if (err) return console.log(err)
     res.render('posts', {
-      title: '文章管理',
+      title: '文章管理-新建文章',
       doc: doc
     })
   })
