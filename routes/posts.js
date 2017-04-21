@@ -17,8 +17,8 @@ router.get('/', checkLogin, (req, res, next) => {
 
 // 增加文章
 router.post('/', checkLogin, (req, res, next) => {
-  let title = req.body.aTitle;
-  let body = req.body.aBody;
+  let title = req.body.title;
+  let body = req.body.content;
   let select = req.body.select;
   let time = req.body.time;
   // let activeClass = ['ordinary','good', 'top', 'bulletin'];

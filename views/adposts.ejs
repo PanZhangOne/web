@@ -2,7 +2,6 @@
 <title><%= title%></title>
 <link rel="stylesheet" href="/css/wangEditor.css">
 <link rel="stylesheet" href="/css/admin.css">
-<link rel="stylesheet" href="/css/ad-editor.css">
 </head>
 <body>
 <!--顶部导航开始-->
@@ -17,8 +16,6 @@
       </button>
       <a class="navbar-brand active" href="/admin">Home</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class=""><a href="/">首页 <span class="sr-only">(current)</span></a></li>
@@ -48,10 +45,10 @@
           <a href="javascript:void(0)">文章管理</a>
           <ul class="admin-sidebar-sub" style="display:none;">
             <li>
-              <a href="javascript:void (0)">新建文章</a>
+              <a href="/posts">新建文章</a>
             </li>
             <li>
-              <a href="/adposts">管理中心</a>
+              <a href="#">管理中心</a>
             </li>
           </ul>
         </li>
@@ -102,28 +99,31 @@
     <div class="ad-content-body">
       <div class="body-header">
         <div class="bh-nav">
-          <strong>文章</strong>/ <small>新建文章</small>
+          <strong>文章</strong>/ <small>管理中心</small>
         </div>
       </div>
-      <div class="editor-content" style="width: 90%;margin: 0 auto">
-        <div class="title">
-          <input type="text" id="title" placeholder="请输入标题">
-          <select name="" id="select">
-            <option value="ordinary">普通</option>
-            <option value="top">置顶</option>
-            <option value="good">精华</option>
-            <option value="bulletin">公告</option>
-          </select>
-          <button id="submit">发表</button>
-        </div>
-        <div id="editor" style="height: 500px; max-height: 650px">
-          <p>请输入内容</p>
-        </div>
+      <div class="article">
+        <h2>所有文章</h2>
+        <table class="table table-striped">
+          <tr>
+            <th>标题</th>
+            <th>时间</th>
+            <th>类型</th>
+            <th>操作</th>
+          </tr>
+      <% for (var i = 0;i < doc.length;i++){ %>
+          <tr>
+            <td><%= doc[i].title %></td>
+            <td><%= doc[i].time %></td>
+            <td>暂无</td>
+            <td>暂无</td>
+          </tr>
+        <% } %>
+        </table>
       </div>
     </div>
   </div>
 </div>
 <script src="/js/jquery-2.2.1.js"></script>
-<script src="/js/wangEditor.js"></script>
-<script src="/js/posts.js"></script>
+<script src="/js/admin.js"></script>
 <% include footer %>

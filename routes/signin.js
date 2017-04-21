@@ -22,7 +22,7 @@ router.post('/', checkNotLogin, (req, res, next) => {
     }
     // console.log(password)
     if (password !== user.password) {
-      req.flash('error', '用户名或密码错误')
+      req.flash('error', '用户名或密码错误');
       return res.redirect('back');
     }
     req.flash('success', '登陆成功');

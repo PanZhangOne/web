@@ -7,11 +7,39 @@ window.onload = () => {
   let editor = new wangEditor(editorDiv);
   editor.config.uploadImgUrl = '/upload';
   editor.create();
+  $('#submit').on('click', () => {
+    function getPostValue() {
+      let title = $('#title').val();
+      let content = editor.$txt.html();
+      let select = $('#select').val();
+      let time = new Date();
+      if (!title || !content) {
+        alert('请输入内容');
+        return null
+      }
+      return {
+        title,
+        content,
+        select,
+        time
+      }
+    }
+    if (getPostValue()) {
+      $.ajax({
+        type: 'POST',
+        url: '/posts',
+        data: getPostValue(),
+        success: function () {
+          alert('添加成功')
+        }
+      })
+    }
+  })
 };
 
 function showDiv() {
   let items = document.getElementsByClassName('js-list');
-  for (let i =0; i<items.length; i++) {
+  for (let i = 0; i < items.length; i++) {
     items[i].onclick = () => {
       if (!items[i].isShow) {
         items[i].isShow = true;
@@ -23,4 +51,5 @@ function showDiv() {
     }
   }
 }
+
 

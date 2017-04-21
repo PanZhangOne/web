@@ -7,6 +7,6 @@ router.get('/', checkLogin, (req, res, next) => {
   res.render('admin',{
     title: '后台管理首页'
   })
-})
+});
 
 module.exports = router;
