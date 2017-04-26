@@ -12,7 +12,7 @@ window.onload = () => {
       let title = $('#title').val();
       let content = editor.$txt.html();
       let select = $('#select').val();
-      let time = new Date();
+      let time = new Date().toLocaleString();
       if (!title || !content) {
         alert('请输入内容');
         return null
@@ -30,6 +30,7 @@ window.onload = () => {
         url: '/posts',
         data: getPostValue(),
         success: function () {
+          window.location.href = '/adposts'
           alert('添加成功')
         }
       })

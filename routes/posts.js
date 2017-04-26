@@ -26,10 +26,7 @@ router.post('/', checkLogin, (req, res, next) => {
     postModel.create({
       title: title,
       content: body,
-      ordinary: true,
-      top: false,
-      good: false,
-      bulletin: false,
+      type: 'ordinary',
       time: time
     }, (err, small) => {
       if (err) return console.log(err)
@@ -40,10 +37,7 @@ router.post('/', checkLogin, (req, res, next) => {
     postModel.create({
       title: title,
       content: body,
-      ordinary: false,
-      top: false,
-      good: true,
-      bulletin: false,
+      type:'good',
       time: time
     }, (err, small) => {
       if (err) return console.log(err)
@@ -54,10 +48,7 @@ router.post('/', checkLogin, (req, res, next) => {
     postModel.create({
       title: title,
       content: body,
-      ordinary: false,
-      top: true,
-      good: false,
-      bulletin: false,
+      type: 'top',
       time: time
     }, (err, small) => {
       if (err) return console.log(err)
@@ -68,10 +59,7 @@ router.post('/', checkLogin, (req, res, next) => {
     postModel.create({
       title: title,
       content: body,
-      ordinary: false,
-      top: false,
-      good: false,
-      bulletin: true,
+      type: 'bulletin',
       time: time
     }, (err, small) => {
       if (err) return console.log(err)

@@ -8,4 +8,5 @@ module.exports = (app) => {
   app.use('/leave', require('./leave'))
   app.use('/test', require('./test'))
   app.use('/adposts', require('./adposts'))
+  app.use('/newproject', require('./newproject'))
 }

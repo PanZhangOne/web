@@ -22,11 +22,8 @@ const postSchema = new mongoose.Schema({
   title: String,
   content: String,
   pv: Number, // 阅读量
-  ordinary: Boolean, // 普通文章
-  top: Boolean, // 置顶文章
-  good: Boolean, // 精华
-  bulletin: Boolean, // 公告
-  time: Date
+  type: String, // 类型
+  time: String
 });
 
 const postModel = mongoose.model('post', postSchema);
