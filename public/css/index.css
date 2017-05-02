@@ -1,0 +1,102 @@
+/*===========*/
+/*  样式重置   */
+/*===========*/
+ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/*===========*/
+/*==网站头部==*/
+/*===========*/
+.header-top {
+  padding: 1em 0;
+}
+
+.logo{
+  float: left;
+  margin-top: 12px;
+  font-size: 3em;
+  line-height: 30px;
+}
+
+.logo > a {
+  color: #2dcc70;
+  text-decoration: none;
+  display: block;
+}
+
+header > nav {
+  background: #34495e;
+  border: none;
+  margin: 0em;
+}
+
+header > nav > ul {
+  text-align: center;
+}
+
+header > nav > ul > li {
+  display: inline-block;
+}
+header > nav > ul > li > a {
+  display: inline-block;
+  padding: 1.5em 3.6em;
+  font-size: 1.2em;
+  font-weight: 400;
+  color: #fff;
+}
+
+header > nav > ul > li > a:hover {
+  color: #fff;
+  background-color: #2DCC70;
+}
+
+.active-h {
+  color: #fff;
+  background-color: #2DCC70;
+}
+
+/*==========*/
+/*幻灯片*/
+/*==========*/
+
+
+.carousel {
+  height: 650px;
+}
+.carousel .item {
+  height: 650px;
+}
+.carousel img {
+  width: 100%;
+}
+
+/*=========*/
+/*网站主体*/
+/*=========*/
+
+.wedo {
+  padding: 4em 0;
+  font-family: "微软雅黑";
+}
+
+.wedo-top {
+  padding:0 0 3em 0;
+  text-align: center;
+}
+
+.wedo-top h3 {
+  font-size: 2.8em;
+  margin: 0 0 .1em 0;
+  color: #2DCC70;
+}
+
+.wedo-top p {
+  font-size: 1em;
+  width: 60%;
+  font-weight: 400;
+  color: #838383;
+  margin: 0 auto;
+}

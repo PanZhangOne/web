@@ -8,7 +8,7 @@ const url = require('url');
 
 const uploadfoldername = 'uploadfiles';
 // const uploadfolderpath = path.join(__dirname, uploadfoldername);
-const uploadfolderpath = './public/uploadfiles'
+const uploadfolderpath = './public/uploadfiles';
 const SERVER = 'localhost';
 
 router.post('/',(req,res,next) => {
@@ -35,7 +35,7 @@ router.post('/',(req,res,next) => {
       // console.log('console start');
       // console.log('....................................')
       // console.log(file)
-      console.log(tempfilepath)
+      console.log(tempfilepath);
       // console.log(type)
       let filename = file.name;
       let extname = filename.lastIndexOf('.') >= 0

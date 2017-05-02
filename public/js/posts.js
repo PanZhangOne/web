@@ -13,6 +13,7 @@ window.onload = () => {
       let content = editor.$txt.html();
       let select = $('#select').val();
       let time = new Date().toLocaleString();
+      let pv = 10;
       if (!title || !content) {
         alert('请输入内容');
         return null
@@ -21,7 +22,8 @@ window.onload = () => {
         title,
         content,
         select,
-        time
+        time,
+        pv
       }
     }
     if (getPostValue()) {
@@ -30,7 +32,7 @@ window.onload = () => {
         url: '/posts',
         data: getPostValue(),
         success: function () {
-          window.location.href = '/adposts'
+          window.location.href = '/adposts';
           alert('添加成功')
         }
       })

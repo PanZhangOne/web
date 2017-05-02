@@ -11,7 +11,7 @@ window.onload = () => {
           method: 'GET',
           url: `/adposts/${_id}/remove`,
           success: function () {
-            window.location.href = '/adposts'
+            window.location.href = '/adposts';
             alert('成功删除')
           }
         })

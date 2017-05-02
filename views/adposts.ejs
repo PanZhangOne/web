@@ -109,6 +109,7 @@
             <th>标题</th>
             <th>时间</th>
             <th>类别</th>
+            <th>阅读量</th>
             <th>更改</th>
             <th>删除</th>
           </tr>
@@ -117,6 +118,7 @@
             <td><%= doc[i].title %></td>
             <td><%= doc[i].time %></td>
             <td><%=doc[i].type %></td>
+            <td><%= doc[i].pv%>></td>
             <td>修改</td>
             <td class="js-delete" _id="<%= doc[i]._id%>">删除</td>
           </tr>

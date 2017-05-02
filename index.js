@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -37,10 +37,10 @@ app.use(function(req,res,next) {
   res.locals.success = req.flash('success').toString();
   res.locals.error = req.flash('error').toString();
   next();
-})
+});
 
 routes(app);
 
 app.listen(config.port, () => {
   console.log(`app listening on ${config.port}`)
-})
+});

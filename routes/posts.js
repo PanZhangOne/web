@@ -7,13 +7,13 @@ const postModel = require('../models/mongodb').postModel;
 // get
 router.get('/', checkLogin, (req, res, next) => {
   postModel.find((err, doc) => {
-    if (err) return console.log(err)
+    if (err) return console.log(err);
     res.render('posts', {
       title: '文章管理-新建文章',
       doc: doc
     })
   })
-})
+});
 
 // 增加文章
 router.post('/', checkLogin, (req, res, next) => {
@@ -29,7 +29,7 @@ router.post('/', checkLogin, (req, res, next) => {
       type: 'ordinary',
       time: time
     }, (err, small) => {
-      if (err) return console.log(err)
+      if (err) return console.log(err);
       res.writeHead(200, { 'Content-type': 'text/html' });
       res.end('ok');
     })
@@ -40,7 +40,7 @@ router.post('/', checkLogin, (req, res, next) => {
       type:'good',
       time: time
     }, (err, small) => {
-      if (err) return console.log(err)
+      if (err) return console.log(err);
       res.writeHead(200, { 'Content-type': 'text/html' });
       res.end('ok');
     })
@@ -67,6 +67,6 @@ router.post('/', checkLogin, (req, res, next) => {
       res.end('ok');
     })
   }
-})
+});
 
 module.exports = router;

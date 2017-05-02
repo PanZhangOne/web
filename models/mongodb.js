@@ -23,7 +23,7 @@ const postSchema = new mongoose.Schema({
   content: String,
   pv: Number, // 阅读量
   type: String, // 类型
-  time: String
+  time: String  // 时间
 });
 
 const postModel = mongoose.model('post', postSchema);
@@ -32,6 +32,7 @@ exports.postModel = postModel;
 // 项目展示
 const showInfoSchema = new mongoose.Schema({
   title: String,  // 标题
+  img: String,  // 缩略图
   content: String,  // 内容
   time: String,  // 时间
   index: Boolean  // 是否展示到首页
