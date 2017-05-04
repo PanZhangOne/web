@@ -2,7 +2,6 @@
 <title><%= title%></title>
 <link rel="stylesheet" href="/css/wangEditor.css">
 <link rel="stylesheet" href="/css/admin.css">
-<link rel="stylesheet" href="/css/ad-editor.css">
 </head>
 <body>
 <!--顶部导航开始-->
@@ -17,8 +16,6 @@
       </button>
       <a class="navbar-brand active" href="/admin">Home</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class=""><a href="/">首页 <span class="sr-only">(current)</span></a></li>
@@ -48,7 +45,7 @@
           <a href="javascript:void(0)">文章管理</a>
           <ul class="admin-sidebar-sub" style="display:none;">
             <li>
-              <a href="javascript:void (0)">新建文章</a>
+              <a href="/posts">新建文章</a>
             </li>
             <li>
               <a href="/adposts">管理中心</a>
@@ -59,7 +56,7 @@
           <a href="javascript:void (0)">项目展示</a>
           <ul class="admin-sidebar-sub" style="display: none;">
             <li>
-              <a href="/newproject">新增项目</a>
+              <a href="#">新增项目</a>
             </li>
             <li>
               <a href="#">管理中心</a>
@@ -102,28 +99,12 @@
     <div class="ad-content-body">
       <div class="body-header">
         <div class="bh-nav">
-          <strong>文章</strong>/ <small>新建文章</small>
-        </div>
-      </div>
-      <div class="editor-content" style="width: 90%;margin: 0 auto">
-        <div class="title">
-          <input type="text" id="title" placeholder="请输入标题">
-          <select name="" id="select">
-            <option value="普通">普通</option>
-            <option value="首页">首页</option>
-            <option value="案例">案例</option>
-            <option value="公告">公告</option>
-          </select>
-          <button id="submit">发表</button>
-        </div>
-        <div id="editor" style="height: 500px; max-height: 650px">
-          <p>请输入内容</p>
+          <strong>项目</strong>/ <small>管理中心</small>
         </div>
       </div>
     </div>
   </div>
 </div>
 <script src="/js/jquery-2.2.1.js"></script>
-<script src="/js/wangEditor.js"></script>
-<script src="/js/posts.js"></script>
+<script src="/js/admin.js"></script>
 <% include footer %>

@@ -1,10 +1,11 @@
 /**
  * Created by zone0 on 2017/5/3.
  */
+'use strict';
 window.onload = () => {
   recentFn();
+  postMessage();
 };
-
 
 const recentFn = function () {
   let btns = $('#js-btn > li');
@@ -29,4 +30,35 @@ const recentFn = function () {
       }
     }
   }
+};
+
+const postMessage = function () {
+  $('#submit').on('click', () => {
+    function getMessageValue() {
+      let name = $('#name').val();
+      let tel = $('#tel').val();
+      let message = $('#message').val();
+      let time = new Date().toLocaleString();
+      if (!name || !message || !tel) {
+        alert('请输完整');
+        return null;
+      }
+      return {
+        name,
+        tel,
+        message,
+        time
+      }
+    }
+    if (getMessageValue()) {
+      $.ajax({
+        type: 'POST',
+        url: '/leave',
+        data: getMessageValue(),
+        success: function () {
+          alert('添加成功');
+        }
+      })
+    }
+  })
 };

@@ -22,44 +22,44 @@ router.post('/', checkLogin, (req, res, next) => {
   let select = req.body.select;
   let time = req.body.time;
   // let activeClass = ['ordinary','good', 'top', 'bulletin'];
-  if (select === 'ordinary') {
+  if (select === '普通') {
     postModel.create({
       title: title,
       content: body,
-      type: 'ordinary',
+      type: '普通',
       time: time
     }, (err, small) => {
       if (err) return console.log(err);
       res.writeHead(200, { 'Content-type': 'text/html' });
       res.end('ok');
     })
-  } else if (select === 'good') {
+  } else if (select === '首页') {
     postModel.create({
       title: title,
       content: body,
-      type:'good',
+      type:'首页',
       time: time
     }, (err, small) => {
       if (err) return console.log(err);
       res.writeHead(200, { 'Content-type': 'text/html' });
       res.end('ok');
     })
-  } else if (select === 'top') {
+  } else if (select === '案例') {
     postModel.create({
       title: title,
       content: body,
-      type: 'top',
+      type: '案例',
       time: time
     }, (err, small) => {
       if (err) return console.log(err)
       res.writeHead(200, { 'Content-type': 'text/html' });
       res.end('ok');
     })
-  } else if (select === 'bulletin') {
+  } else if (select === '公告') {
     postModel.create({
       title: title,
       content: body,
-      type: 'bulletin',
+      type: '公告',
       time: time
     }, (err, small) => {
       if (err) return console.log(err)

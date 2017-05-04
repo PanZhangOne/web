@@ -44,9 +44,11 @@ exports.showInfoModel = showInfoModel;
 const leaveMessageSchema = mongoose.Schema({
   name: String,  // 留言者姓名
   tel: String,  // 联系方式
-  time: Date,  // 时间
+  time: String,  // 时间
   operate: Boolean, // 操作
-  call: Boolean  // 是否回访
+  call: Boolean,  // 是否回访
+  remarks: String,  // beizhu
+  message: String
 });
 
 const leaveMessageModel = mongoose.model('leavemessage', leaveMessageSchema);

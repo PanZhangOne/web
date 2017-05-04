@@ -9,4 +9,9 @@ module.exports = (app) => {
   app.use('/test', require('./test'))
   app.use('/adposts', require('./adposts'))
   app.use('/newproject', require('./newproject'))
+  app.use('/server', require('./server'))
+  app.use('/gallery', require('./gallery'))
+  app.use('/about', require('./about'))
+  app.use('/contact', require('./contact'))
+  app.use('/project', require('./project'))
 }
