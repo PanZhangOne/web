@@ -8,7 +8,7 @@ router.get('/', checkLogin, (req, res, next) => {
   postModel.find({}, ['pv', 'title', 'time', 'type']).sort({
     "time": -1
   }).exec().then((doc) => {
-    console.log(doc);
+    // console.log(doc);
     res.render('adposts', {
       title: '后台管理-文章管理',
       doc
@@ -18,6 +18,7 @@ router.get('/', checkLogin, (req, res, next) => {
 
 router.get('/:postID/remove', checkLogin, (req, res, next) => {
   let postID = req.params.postID;
+  // console.log(postID);
   postModel.remove({_id: postID}, (err) => {
     if (err) throw new Error(err);
     req.flash('success', '删除文章成功');

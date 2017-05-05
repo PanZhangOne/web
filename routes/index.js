@@ -14,4 +14,4 @@ module.exports = (app) => {
   app.use('/about', require('./about'))
   app.use('/contact', require('./contact'))
   app.use('/project', require('./project'))
-}
+};

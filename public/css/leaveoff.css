@@ -135,24 +135,3 @@ admin-sidebar,.admin-content {
 .body-main {
   padding: 1.6rem;
 }
-
-.com-info input[type="text"] {
-  font-size: 1em;
-  font-weight: 400;
-  color: #737373;
-  padding: 0.4em 0.5em;
-  width: 100%;
-  margin: 0em 0em 1em 0em;
-  outline: none;
-}
-
-.com-info input[type="submit"] {
-  font-size: 1em;
-  font-weight: 400;
-  color: #fff;
-  padding: 0.51em 2em 0.51em 2em;
-  border: none;
-  background: #2DCC70;
-  outline: none;
-  margin: 0em 0em 0em 0em;
-}

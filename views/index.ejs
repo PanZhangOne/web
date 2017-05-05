@@ -183,6 +183,7 @@
 <div class="message">
   <div class="container">
     <div class="message-main">
+      <% for (var i = 0;i < doc.length;i++){ %>
       <div class="col-md-6 contact-left">
         <h3>关于我们</h3>
         <h4>联系方式</h4>
@@ -191,7 +192,7 @@
           <div class="cal-text">
             <p>
               公司电话：
-              <span class="foot">+1258 884 625</span>
+              <span class="foot"><%= doc[i].tel %></span>
             </p>
           </div>
         </div>
@@ -200,7 +201,7 @@
           <div class="cal-text">
             <p>
               公司邮箱：
-              <span class="foot">+1258 884 625</span>
+              <span class="foot"><%= doc[i].email %></span>
             </p>
           </div>
         </div>
@@ -209,11 +210,12 @@
           <div class="cal-text">
             <p>
               地址：
-              <span class="foot">重庆市渝北区东路南路</span>
+              <span class="foot"><%= doc[i].address %></span>
             </p>
           </div>
         </div>
       </div>
+      <% } %>
       <div class="col-md-6 contact-right">
         <h3>咨询留言</h3>
         <input type="text" id="name" placeholder="姓名">

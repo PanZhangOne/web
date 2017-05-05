@@ -1,6 +1,6 @@
 <% include header %>
 <title><%= title%></title>
-<link rel="stylesheet" href="/css/leaveoff.css">
+<link rel="stylesheet" href="/css/leaveok.css">
 </head>
 <body>
 <!--顶部导航开始-->
@@ -98,7 +98,7 @@
     <div class="ad-content-body">
       <div class="body-header">
         <div class="bh-nav">
-          <strong>留言</strong>/ <small>未操作的留言</small>
+          <strong>留言</strong>/ <small>已经操作的留言</small>
         </div>
       </div>
       <div class="body-main">
@@ -112,14 +112,14 @@
             <th>操作</th>
           </tr>
           <% for (var i = 0;i < doc.length;i++){ %>
-            <tr>
-              <td><%= doc[i].name%></td>
-              <td><%= doc[i].tel%></td>
-              <td><%= doc[i].time %></td>
-              <td><%= doc[i].message %></td>
-              <td><%= doc[i].remarks %></td>
-              <td><a class="js-h" _id="<%= doc[i]._id%>" href="javascript:void (0)">回访</a>/<a class="js-d" href="javascript:void (0)" _id="<%= doc[i]._id %>">删除</a></td>
-            </tr>
+          <tr>
+            <td><%= doc[i].name%></td>
+            <td><%= doc[i].tel%></td>
+            <td><%= doc[i].time %></td>
+            <td><%= doc[i].message %></td>
+            <td><%= doc[i].remarks %></td>
+            <td>回访</td>
+          </tr>
           <% } %>
         </table>
       </div>
@@ -127,5 +127,5 @@
   </div>
 </div>
 <script src="/js/jquery-2.2.1.js"></script>
-<script src="/js/leaveoff.js"></script>
+<script src="/js/admin.js"></script>
 <% include footer %>

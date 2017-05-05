@@ -1,4 +1,9 @@
 'use strict';
+window.onload = () => {
+  showDiv();
+  postComInfo();
+};
+
 
 function showDiv() {
   let items = document.getElementsByClassName('js-list');
@@ -14,4 +19,31 @@ function showDiv() {
     }
   }
 }
-showDiv();
+
+const postComInfo = () => {
+  $('#submit').on('click', () => {
+    function getPostInfo() {
+      let tel = $('#tel').val();
+      let email = $('#email').val();
+      let address = $('#address').val();
+      let synopsis = $('#synopsis').val();
+      return {
+        tel,
+        email,
+        address,
+        synopsis
+      }
+    }
+    if (getPostInfo()) {
+      $.ajax({
+        type: 'POST',
+        url: '/admin/newcom',
+        data: getPostInfo(),
+        success: function () {
+          alert('更新成功')
+        }
+      })
+    }
+  })
+};
+

@@ -53,3 +53,15 @@ const leaveMessageSchema = mongoose.Schema({
 
 const leaveMessageModel = mongoose.model('leavemessage', leaveMessageSchema);
 exports.leaveMessageModel = leaveMessageModel;
+
+// 公司信息
+
+const comInfoSchema = new mongoose.Schema({
+  tel: String,
+  email: String,
+  address: String,
+  synopsis: String
+});
+
+const comInfoModel = mongoose.model('cominfo', comInfoSchema);
+exports.comInfoMode = comInfoModel;

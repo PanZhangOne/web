@@ -1,10 +1,11 @@
 <% include header %>
-  <title><%= title%></title>
-  <link rel="stylesheet" href="/css/admin.css">
+<title><%= title%></title>
+<link rel="stylesheet" href="/css/wangEditor.css">
+<link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
 <!--顶部导航开始-->
-  <nav class="navbar navbar-default navbar-inverse">
+<nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -52,13 +53,10 @@
           </ul>
         </li>
         <li class="js-list">
-          <a href="javascript:void (0)">项目展示</a>
+          <a href="javascript:void (0)">服务管理</a>
           <ul class="admin-sidebar-sub" style="display: none;">
             <li>
-              <a href="/newproject">新增项目</a>
-            </li>
-            <li>
-              <a href="/project">管理中心</a>
+              <a href="/newproject">管理</a>
             </li>
           </ul>
         </li>
@@ -69,7 +67,7 @@
               <a href="/leave/off">未操作</a>
             </li>
             <li>
-              <a href="#">已操作</a>
+              <a href="leave/ok">已操作</a>
             </li>
           </ul>
         </li>
@@ -82,7 +80,7 @@
           </ul>
         </li>
         <li class="js-list">
-          <a href="javascript: void(0)">其他</a>
+          <a href="#">其他</a>
           <ul class="admin-sidebar-sub" style="display: none">
             <li>
               <a href="#">还没有开发</a>
@@ -98,7 +96,23 @@
     <div class="ad-content-body">
       <div class="body-header">
         <div class="bh-nav">
-          <strong>首页</strong>/ <small>快速入口</small>
+          <strong>后台</strong>/ <small>快速入口</small>
+        </div>
+      </div>
+      <div class="body-main">
+        <div class="col-md-4 com-info">
+          <h3>公司信息</h3>
+          <% for (var i = 0;i < doc.length;i++){ %>
+          <p>公司电话</p>
+          <input type="text" id="tel" placeholder="联系电话" value="<%= doc[i].tel %>">
+          <p>公司邮箱</p>
+          <input type="text" id="email" placeholder="公司邮箱" value="<%= doc[i].email %>">
+          <p>公司地址</p>
+          <input type="text" id="address" placeholder="公司地址" value="<%= doc[i].address  %>">
+          <p>公司简介</p>
+          <input type="text" id="synopsis" placeholder="公司简介" value="<%= doc[i].synopsis %>">
+          <input id="submit" type="submit" value="修改">
+          <% } %>
         </div>
       </div>
     </div>
@@ -107,3 +121,4 @@
 <script src="/js/jquery-2.2.1.js"></script>
 <script src="/js/admin.js"></script>
 <% include footer %>
+

@@ -56,7 +56,8 @@ const postMessage = function () {
         url: '/leave',
         data: getMessageValue(),
         success: function () {
-          alert('添加成功');
+          window.location.href = window.location.href;
+          alert('留言成功，我们会尽快与您联系');
         }
       })
     }

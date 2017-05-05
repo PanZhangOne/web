@@ -30,18 +30,18 @@ router.post('/', checkLogin, (req, res, next) => {
       time: time
     }, (err, small) => {
       if (err) return console.log(err);
-      res.writeHead(200, { 'Content-type': 'text/html' });
+      res.writeHead(200, {'Content-type': 'text/html'});
       res.end('ok');
     })
   } else if (select === '首页') {
     postModel.create({
       title: title,
       content: body,
-      type:'首页',
+      type: '首页',
       time: time
     }, (err, small) => {
       if (err) return console.log(err);
-      res.writeHead(200, { 'Content-type': 'text/html' });
+      res.writeHead(200, {'Content-type': 'text/html'});
       res.end('ok');
     })
   } else if (select === '案例') {
@@ -51,8 +51,8 @@ router.post('/', checkLogin, (req, res, next) => {
       type: '案例',
       time: time
     }, (err, small) => {
-      if (err) return console.log(err)
-      res.writeHead(200, { 'Content-type': 'text/html' });
+      if (err) return console.log(err);
+      res.writeHead(200, {'Content-type': 'text/html'});
       res.end('ok');
     })
   } else if (select === '公告') {
@@ -62,8 +62,8 @@ router.post('/', checkLogin, (req, res, next) => {
       type: '公告',
       time: time
     }, (err, small) => {
-      if (err) return console.log(err)
-      res.writeHead(200, { 'Content-type': 'text/html' });
+      if (err) return console.log(err);
+      res.writeHead(200, {'Content-type': 'text/html'});
       res.end('ok');
     })
   }
