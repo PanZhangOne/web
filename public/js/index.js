@@ -50,6 +50,7 @@ const postMessage = function () {
         time
       }
     }
+
     if (getMessageValue()) {
       $.ajax({
         type: 'POST',

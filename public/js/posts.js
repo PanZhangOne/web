@@ -7,36 +7,71 @@ window.onload = () => {
   let editor = new wangEditor(editorDiv);
   editor.config.uploadImgUrl = '/upload';
   editor.create();
-  $('#submit').on('click', () => {
-    function getPostValue() {
-      let title = $('#title').val();
-      let content = editor.$txt.html();
-      let select = $('#select').val();
-      let time = new Date().toLocaleString();
-      let pv = 10;
-      if (!title || !content) {
-        alert('请输入内容');
-        return null
-      }
-      return {
-        title,
-        content,
-        select,
-        time,
-        pv
-      }
-    }
-    if (getPostValue()) {
-      $.ajax({
-        type: 'POST',
-        url: '/posts',
-        data: getPostValue(),
-        success: function () {
-          window.location.href = '/adposts';
-          alert('添加成功')
+  // $('#submit').on('click', () => {
+  //   function getPostValue() {
+  //     let title = $('#title').val();
+  //     let content = editor.$txt.html();
+  //     let select = $('#select').val();
+  //     let time = new Date().toLocaleString();
+  //     let pv = 10;
+  //     if (!title || !content) {
+  //       alert('请输入内容');
+  //       return null
+  //     }
+  //     return {
+  //       title,
+  //       content,
+  //       select,
+  //       time,
+  //       pv
+  //     }
+  //   }
+  //   if (getPostValue()) {
+  //     $.ajax({
+  //       type: 'POST',
+  //       url: '/posts',
+  //       data: getPostValue(),
+  //       success: function () {
+  //         window.location.href = '/adposts';
+  //         alert('添加成功')
+  //       }
+  //     })
+  //   }
+  // })
+  fileUpload().then((img) => {
+    $('#submit').on('click', function () {
+      function getPostValue() {
+        let title = $('#title').val();
+        let content = editor.$txt.html();
+        let select = $('#select').val();
+        let time = new Date().toLocaleString();
+        let pv = 0
+        if (!title || !content) {
+          alert('请输入内容');
+          return null
         }
-      })
-    }
+        return {
+          title,
+          content,
+          select,
+          title,
+          pv,
+          img,
+          time
+        }
+      }
+      if (getPostValue()) {
+        $.ajax({
+          type: 'POST',
+          url: '/posts',
+          data: getPostValue(),
+          success: function () {
+            window.location.href = '/adposts';
+            alert('添加成功')
+          }
+        })
+      }
+    })
   })
 };
 
@@ -54,5 +89,29 @@ function showDiv() {
     }
   }
 }
+
+
+const fileUpload = function () {
+  return new Promise((resolve, reject) => {
+    $('#imgsubmit').on('click', () => {
+      let formDate = new FormData();
+      formDate.append('file', $('#file')[0].files[0]);
+      $.ajax({
+        url: '/upload',
+        type: 'POST',
+        cache: false,
+        data: formDate,
+        processData: false,
+        contentType: false,
+        success: function (e) {
+          resolve(e)
+        }
+      })
+    })
+  })
+};
+
+
+
 
 

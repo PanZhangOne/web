@@ -57,7 +57,7 @@
           <a href="javascript:void (0)">服务管理</a>
           <ul class="admin-sidebar-sub" style="display: none;">
             <li>
-              <a href="#">新增项目</a>
+              <a href="#">管理</a>
             </li>
           </ul>
         </li>
@@ -65,10 +65,10 @@
           <a href="javascript:void(0)">咨询管理</a>
           <ul class="admin-sidebar-sub" style="display: none">
             <li>
-              <a href="#">未操作</a>
+              <a href="/leave/off">未操作</a>
             </li>
             <li>
-              <a href="#">已操作</a>
+              <a href="leave/ok">已操作</a>
             </li>
           </ul>
         </li>
@@ -102,7 +102,30 @@
         </div>
       </div>
       <div class="body-main">
-        <h3>服务列表：</h3>
+        <h3>当前展示的：</h3>
+        <div class="showserver col-md-8">
+          <% for (var i = 0;i < doc.length;i++){ %>
+          <div class="media">
+            <div class="media-left server-img">
+              <a href="#">
+                <img class="media-object" src="<%= doc[i].img %>" alt="...">
+              </a>
+            </div>
+            <div class="media-body">
+              <h4 class="media-heading"><%= doc[i].title %></h4>
+              <p><%= doc[i].content %></p>
+            </div>
+          </div>
+          <%}%>
+        </div>
+        <div class="newserver col-md-6">
+          <h3>新增服务</h3>
+          <input type="file" id="file">
+          <input type="submit" id="imgup" value="上传图片">
+          <input type="text" id="title" placeholder="标题">
+          <textarea id="content" placeholder="内容"></textarea>
+          <input type="submit" id="submit">
+        </div>
       </div>
     </div>
   </div>

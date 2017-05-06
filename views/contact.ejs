@@ -1,6 +1,6 @@
 <% include header %>
 <title><%= title %>></title>
-<link rel="stylesheet" href="/css/server.css">
+<link rel="stylesheet" href="/css/contact.css">
 </head>
 <body>
 <header>
@@ -17,7 +17,7 @@
   <nav>
     <ul class="container">
       <li><a class="" href="/">首页</a></li>
-      <li><a  href="/server">服务</a></li>
+      <li><a href="/server">服务</a></li>
       <li><a href="/gallery">展示</a></li>
       <li><a class="active-h" href="/contact">联系</a></li>
       <li><a href="/about">关于</a></li>
@@ -25,6 +25,72 @@
   </nav>
 </header>
 
+<div class="contact">
+  <div class="container">
+    <div class="contact-main">
+      <div class="contact-top">
+        <h3>联系我们</h3>
+        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections Cicero are reproduced.</p>
+      </div>
+      <div class="col-md-6 contact-left">
+        <h3>Information</h3>
+        <h4>Cicero are also reproduced in their exact original</h4>
+        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English.Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by EnglishFinibus Bonorum et Malorum" by Cicero are also reproduced in their exact original </p>
+      </div>
+      <div class="col-md-6 contact-right">
+        <h3>Feedback</h3>
+        <input type="text" placeholder="姓名" id="name">
+        <input type="text" id="tel" placeholder="联系方式">
+        <textarea id="message" placeholder="留言"></textarea>
+        <input type="submit" value="留言" id="submit">
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
 
+<div class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-icon">
+        <div class="col-md-4 footer-grid">
+          <span class="glyphicon glyphicon-phone-alt call-icon"></span>
+          <div class="footer-text">
+            <p>
+              电话：
+              <span class="foot"><%= doc.tel %></span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-4 footer-grid">
+          <span class="glyphicon glyphicon-envelope call-icon"></span>
+          <div class="footer-text">
+            <p>
+              邮箱：
+              <span class="foot"><%= doc.email %></span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-4 footer-grid">
+          <span class="glyphicon glyphicon-home call-icon" aria-hidden="true"></span>
+          <div class="footer-text">
+            <p>
+              地址：
+              <span class="foot"><%= doc.address %></span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="copyright">
+          <p>Copyright © 2017.Company SanYang All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="/js/jquery-2.2.1.js"></script>
+<script src="/js/contact.js"></script>
 <% include footer %>

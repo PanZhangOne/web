@@ -23,7 +23,8 @@ const postSchema = new mongoose.Schema({
   content: String,
   pv: Number, // 阅读量
   type: String, // 类型
-  time: String  // 时间
+  time: String,  // 时间
+  img: String
 });
 
 const postModel = mongoose.model('post', postSchema);
@@ -55,13 +56,20 @@ const leaveMessageModel = mongoose.model('leavemessage', leaveMessageSchema);
 exports.leaveMessageModel = leaveMessageModel;
 
 // 公司信息
-
 const comInfoSchema = new mongoose.Schema({
   tel: String,
   email: String,
   address: String,
   synopsis: String
 });
-
 const comInfoModel = mongoose.model('cominfo', comInfoSchema);
 exports.comInfoMode = comInfoModel;
+
+// 服务
+const serversScheam = mongoose.Schema({
+  title: String,
+  content: String,
+  img: String
+});
+const serversModel = mongoose.model('server', serversScheam);
+exports.serversModel = serversModel;

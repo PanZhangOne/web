@@ -21,13 +21,15 @@ router.post('/', checkLogin, (req, res, next) => {
   let body = req.body.content;
   let select = req.body.select;
   let time = req.body.time;
+  let img = req.body.img;
   // let activeClass = ['ordinary','good', 'top', 'bulletin'];
   if (select === '普通') {
     postModel.create({
       title: title,
       content: body,
       type: '普通',
-      time: time
+      time: time,
+      img: img
     }, (err, small) => {
       if (err) return console.log(err);
       res.writeHead(200, {'Content-type': 'text/html'});
@@ -38,7 +40,8 @@ router.post('/', checkLogin, (req, res, next) => {
       title: title,
       content: body,
       type: '首页',
-      time: time
+      time: time,
+      img: img
     }, (err, small) => {
       if (err) return console.log(err);
       res.writeHead(200, {'Content-type': 'text/html'});
@@ -49,7 +52,8 @@ router.post('/', checkLogin, (req, res, next) => {
       title: title,
       content: body,
       type: '案例',
-      time: time
+      time: time,
+      img: img
     }, (err, small) => {
       if (err) return console.log(err);
       res.writeHead(200, {'Content-type': 'text/html'});
@@ -60,7 +64,8 @@ router.post('/', checkLogin, (req, res, next) => {
       title: title,
       content: body,
       type: '公告',
-      time: time
+      time: time,
+      img: img
     }, (err, small) => {
       if (err) return console.log(err);
       res.writeHead(200, {'Content-type': 'text/html'});

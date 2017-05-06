@@ -3,8 +3,6 @@ window.onload = () => {
   showDiv();
   postComInfo();
 };
-
-
 function showDiv() {
   let items = document.getElementsByClassName('js-list');
   for (let i =0; i<items.length; i++) {
