@@ -4,33 +4,21 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const comInfoMode = require('../models/mongodb').comInfoMode;
-const serversModel = require('../models/mongodb').serversModel;
 
 router.get('/', (req, res, next) => {
-  comInfoMode.findOne({_id: '590aacb7a982eb098c9d7cc6'}, (err, doc) => {
-    if (err) {
-      console.log(err);
-      return next;
-    }
-    function getServers() {
-      return new Promise((resolve, reject) => {
-        serversModel.find({}, (err, server) => {
-          if (err) reject(err);
-          resolve(server)
-        })
-      })
-    }
-    getServers().then((server) => {
-      res.render('server', {
-        title: '服务-三扬装饰有限公司',
-        doc,
-        server
-      })
-    }).catch((e) => {
-      console.log(e);
+  const getValue = async function () {
+    let comInfoModel = require('../models/com').getComInfo;
+    let getServers = require('../models/servermodel').getServers;
+    let title = '服务-三洋装饰有限公司';
+
+    let doc = await comInfoModel();
+    let server = await getServers();
+    res.render('server', {
+      title,
+      doc,
+      server
     })
-  })
+  }();
 });
 
 module.exports = router;

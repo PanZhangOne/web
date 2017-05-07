@@ -36,21 +36,21 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner item-width" role="listbox">
       <div class="item active">
-        <img src="/img/bg.png" alt="...">
+        <img src="<%= posts[0].img %>" alt="...">
         <div class="carousel-caption">
-          <h3>测试问文章1</h3>
+          <h3><a class="slide-a" href="/detail/<%= posts[0]._id %>"><%= posts[0].title %></a></h3>
         </div>
       </div>
       <div class="item">
-        <img src="/img/bg.png" alt="...">
+        <img src="<%= posts[1].img %>" alt="...">
         <div class="carousel-caption">
-          <h3>测试文章2</h3>
+          <h3><a class="slide-a" href="/detail/<%= posts[1]._id %>"><%= posts[1].title %></a></h3>
         </div>
       </div>
       <div class="item">
-        <img src="/img/bg.png" alt="...">
+        <img src="<%= posts[2].img %>" alt="...">
         <div class="carousel-caption">
-          <h3>测试文章3</h3>
+          <h3><a class="slide-a" href="/detail/<%= posts[2]._id %>"><%= posts[2].title %></a></h3>
         </div>
       </div>
     </div>
@@ -118,51 +118,51 @@
                 class="slides">
               <li style="float: left;display: block;width: 1140px;" class="clone">
                 <div class="recent-grid">
-                  <div class="col-md-6 contact-left">
+                  <div class="col-sm-6 contact-left">
                     <h3>最近项目</h3>
-                    <h4>Lorem ipsum dolor sit amet 1</h4>
+                    <h4><%= casePost[0].title %></h4>
                     <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was
                       born</p>
                     <div class="recent-btn">
                       <a href="javascript:void (0)">阅读更多</a>
                     </div>
                   </div>
-                  <div class="col-md-6 contact-right">
-                    <img src="/img/sl3.jpg" alt="">
+                  <div class="col-sm-6 contact-right">
+                    <img src="<%= casePost[0].img %>" alt="" class="img-responsive">
                   </div>
                   <div class="clearfix"></div>
                 </div>
               </li>
               <li style="float: left;display: block;width: 1140px;" class="clone">
                 <div class="recent-grid">
-                  <div class="col-md-6 contact-left">
+                  <div class="col-sm-6 contact-left">
                     <h3>最近项目</h3>
-                    <h4>Lorem ipsum dolor sit amet 2</h4>
+                    <h4><%= casePost[1].title %></h4>
                     <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was
                       born</p>
                     <div class="recent-btn">
                       <a href="javascript:void (0)">阅读更多</a>
                     </div>
                   </div>
-                  <div class="col-md-6 contact-right">
-                    <img src="/img/sl3.jpg" alt="">
+                  <div class="col-sm-6 contact-right">
+                    <img src="<%= casePost[1].img %>" alt="" class="img-responsive">
                   </div>
                   <div class="clearfix"></div>
                 </div>
               </li>
               <li style="float: left;display: block;width: 1140px;" class="clone">
-                <div class="recent-grid">
-                  <div class="col-md-6 contact-left">
+                <div class=" recent-grid">
+                  <div class="col-sm-6 contact-left">
                     <h3>最近项目</h3>
-                    <h4>Lorem ipsum dolor sit amet 3</h4>
+                    <h4><%= casePost[2].title %></h4>
                     <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was
                       born</p>
                     <div class="recent-btn">
                       <a href="javascript:void (0)">阅读更多</a>
                     </div>
                   </div>
-                  <div class="col-md-6 contact-right">
-                    <img src="/img/sl3.jpg" alt="">
+                  <div class="col-sm-6 contact-right">
+                    <img src="<%= casePost[2].img %>" alt="" class="img-responsive">
                   </div>
                   <div class="clearfix"></div>
                 </div>

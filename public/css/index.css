@@ -93,6 +93,13 @@ header > nav > ul > li > a:hover {
   width: 100%;
 }
 
+.slide-a {
+  color: white;
+}
+.slide-a:hover {
+  color: #2DCC70;
+}
+
 /*=========*/
 /*网站主体*/
 /*=========*/
@@ -184,7 +191,14 @@ header > nav > ul > li > a:hover {
 .recent {
   padding: 3em 0em 4em 0em;
 }
-
+.contact-left {
+  float: left;
+  width: 50%;
+}
+.contact-right{
+  float: right;
+  width: 50%;
+}
 .recent-left {
   float: left;
   width: 50%;
@@ -272,9 +286,16 @@ header > nav > ul > li > a:hover {
   cursor: default;
 }
 
-@media only screen and (max-width: 979px) {
+@media only screen and (max-width: 1000px) {
   .flex-viewport {
     max-height: 500px;
+  }
+  .contact-left {
+    float: none;
+    padding-bottom: 15px;
+  }
+  .contact-right {
+    float: none;
   }
 }
 

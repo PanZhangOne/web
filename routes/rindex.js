@@ -1,18 +1,21 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const comInfoMode = require('../models/mongodb').comInfoMode;
 
 router.get('/', (req, res, next) => {
-  comInfoMode.findOne({_id: '590aacb7a982eb098c9d7cc6'}, (err, doc) => {
-    if (err) {
-      console.log(err);
-      return next
-    }
+  const getValue = async function () {
+    let getINdexTop = require('../models/indexmodel').getIndexTop;
+    let getIndexMiddle = require('../models/indexmodel').getIndexMiddle;
+    let getComInfo = require('../models/com').getComInfo;
+    let doc = await getComInfo();
+    let posts = await getINdexTop();
+    let casePost = await getIndexMiddle();
     res.render('index', {
-      doc
+      doc,
+      posts,
+      casePost
     })
-  })
+  }();
 });
 
 module.exports = router;

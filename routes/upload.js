@@ -31,16 +31,10 @@ router.post('/',(req,res,next) => {
       let file = files[item];
       let tempfilepath = file.path;
       let type = file.type;
-      // console.log('console start');
-      // console.log('....................................')
-      // console.log(file);
-      // console.log(tempfilepath);
-      // console.log(type)
       let filename = file.name;
       let extname = filename.lastIndexOf('.') >= 0
         ? filename.slice(filename.lastIndexOf('.') - filename.length)
         : '';
-      // console.log(filename)
       console.log(extname);
       if (extname === '' && type.indexOf('/') >= 0) {
         extname = '.' + type.split('/')[1];

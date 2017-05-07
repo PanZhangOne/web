@@ -6,7 +6,6 @@ window.onload = () => {
   recentFn();
   postMessage();
 };
-
 const recentFn = function () {
   let btns = $('#js-btn > li');
   let views = $('#js-recent');

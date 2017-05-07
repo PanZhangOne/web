@@ -1,0 +1,87 @@
+<% include header %>
+<% if (post) { %>
+<title><%= post.title %></title>
+<% } %>
+<link rel="stylesheet" href="/css/detail.css">
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <div class="container">
+      <h1 class="logo"><a href="/">三扬装饰</a></h1>
+      <ul class="header-icon">
+        <li><a href="javascript: void(0)"><span></span></a></li>
+        <li><a href="javascript: void(0)"><span></span></a></li>
+        <li><a href="javascript: void(0)"><span></span></a></li>
+      </ul>
+    </div>
+  </div>
+  <nav>
+    <ul class="container">
+      <li><a class="active-h" href="/">首页</a></li>
+      <li><a href="/server">服务</a></li>
+      <li><a href="/gallery">展示</a></li>
+      <li><a href="/contact">联系</a></li>
+      <li><a href="/about">关于</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="article">
+  <div class="container">
+    <% if (post) { %>
+    <div class="article-wrap">
+      <h1><%= post.title %></h1>
+      <p><%= post.time %></p>
+      <div class="article-main">
+        <%- post.content %>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-icon">
+        <div class="col-md-4 footer-grid">
+          <span class="glyphicon glyphicon-phone-alt call-icon"></span>
+          <div class="footer-text">
+            <p>
+              电话：
+              <span class="foot"><%= doc.tel %></span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-4 footer-grid">
+          <span class="glyphicon glyphicon-envelope call-icon"></span>
+          <div class="footer-text">
+            <p>
+              邮箱：
+              <span class="foot"><%= doc.email %></span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="col-md-4 footer-grid">
+          <span class="glyphicon glyphicon-home call-icon" aria-hidden="true"></span>
+          <div class="footer-text">
+            <p>
+              地址：
+              <span class="foot"><%= doc.address %></span>
+            </p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="copyright">
+          <p>Copyright © 2017.Company SanYang All rights reserved. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% include footer %>
+
