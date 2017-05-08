@@ -295,6 +295,7 @@ header > nav > ul > li > a:hover {
     padding-bottom: 15px;
   }
   .contact-right {
+    width: 100%;
     float: none;
   }
 }

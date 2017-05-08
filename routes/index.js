@@ -14,4 +14,9 @@ module.exports = (app) => {
   app.use('/contact', require('./contact'));
   app.use('/project', require('./project'));
   app.use('/detail', require('./detail'));
+  app.use((req, res) => {
+    if (!res.headersSen) {
+      res.status(404).render('404');
+    }
+  })
 };
