@@ -22,7 +22,7 @@ router.get('/:postID/remove', checkLogin, (req, res, next) => {
   postModel.remove({_id: postID}, (err) => {
     if (err) throw new Error(err);
     req.flash('success', '删除文章成功');
-    res.send('ok');
+    res.end('ok');
   })
 });
 

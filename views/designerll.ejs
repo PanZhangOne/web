@@ -1,15 +1,14 @@
 <% include header %>
-<title><%= title%></title>
-<link rel="stylesheet" href="/css/wangEditor.css">
-<link rel="stylesheet" href="/css/admin.css">
-<link rel="stylesheet" href="/css/ad-editor.css">
+<title><%= title %></title>
+<link rel="stylesheet" href="/css/designerll.css">
 </head>
 <body>
 <!--顶部导航开始-->
 <nav class="navbar navbar-default navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -17,15 +16,14 @@
       </button>
       <a class="navbar-brand active" href="/admin">Home</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class=""><a href="/">首页 <span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户 <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+             aria-expanded="false">用户 <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li role="separator" class="divider"></li>
             <li><a href="/signout">退出登陆</a></li>
@@ -48,7 +46,7 @@
           <a href="javascript:void(0)">文章管理</a>
           <ul class="admin-sidebar-sub" style="display:none;">
             <li>
-              <a href="javascript:void (0)">新建文章</a>
+              <a href="/posts">新建文章</a>
             </li>
             <li>
               <a href="/adposts">管理中心</a>
@@ -88,6 +86,9 @@
             <li>
               <a href="/designer">添加设计师</a>
             </li>
+            <li>
+              <a href="/designer/list">设计师列表</a>
+            </li>
           </ul>
         </li>
       </ul>
@@ -99,32 +100,33 @@
     <div class="ad-content-body">
       <div class="body-header">
         <div class="bh-nav">
-          <strong>文章</strong>/ <small>新建文章</small>
+          <strong>设计管理</strong>/
+          <small>设计师列表</small>
         </div>
       </div>
-      <div class="editor-content" style="width: 90%;margin: 0 auto">
-        <div class="title">
-          <input type="text" id="title" placeholder="请输入标题">
-          <select name="" id="select">
-            <option value="普通">普通</option>
-            <option value="首页">首页</option>
-            <option value="案例">案例</option>
-            <option value="公告">公告</option>
-          </select>
-          <button id="submit">发表</button>
-        </div>
-        <div class="upimg">
-          <input type="file" id="file">
-          <input type="submit" id="imgsubmit" value="上传展示图片">
-        </div>
-        <div id="editor" style="height: 500px; max-height: 650px">
-          <p>请输入内容</p>
+      <div class="body-main">
+        <div class="adddesigner">
+          <table class="table table-hover table-bordered">
+            <tr>
+              <th>头像</th>
+              <th>姓名</th>
+              <th>简介</th>
+              <th>操作</th>
+            </tr>
+            <% for (var i = 0;i < doc.length;i++){ %>
+            <tr>
+              <td><img class="img-width" src="<%=  doc[i].avatar %>" alt=""></td>
+              <td><%= doc[i].designername %></td>
+              <td><%= doc[i].introduction %></td>
+              <td><a _id="<%= doc[i]._id %>" class="js-delete" href="javascript:void (0)">删除</a></td>
+            </tr>
+            <%}%>
+          </table>
         </div>
       </div>
     </div>
   </div>
 </div>
 <script src="/js/jquery-2.2.1.js"></script>
-<script src="/js/wangEditor.js"></script>
-<script src="/js/posts.js"></script>
+<script src="/js/designerll.js"></script>
 <% include footer %>

@@ -3,7 +3,7 @@
  */
 'use strict';
 const postModel = require('./mongodb').postModel;
-const comInfoMode = require('./mongodb').comInfoMode;
+const designerModel = require('./mongodb').designersModel;
 
 // 首页顶部轮播图数据
 const getIndexTop = function () {
@@ -32,3 +32,16 @@ const getIndexMiddle = function getCasePost() {
 
 exports.getIndexMiddle = getIndexMiddle;
 
+const getDesigner = function () {
+  return new Promise((resolve, reject) => {
+    designerModel.find({}, ['designername', 'avatar', 'introduction', 'photo'], {limit: 5})
+      .sort({
+        _id: -1
+      }).exec().then((doc) => {
+      resolve(doc)
+    }).catch((err) => {
+      reject(err)
+    })
+  })
+};
+exports.getDesigner = getDesigner;

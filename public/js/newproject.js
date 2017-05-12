@@ -58,34 +58,3 @@ testFileUpload().then((img) => {
     })
   })
 });
-// $('#submit').on('click', () => {
-//   function getPostValue() {
-//     let title = $('#title').val();
-//     let content = editor.$txt.html();
-//     let select = $('#select').val();
-//     let time = new Date().toLocaleString();
-//     let pv = 10;
-//     if (!title || !content) {
-//       alert('请输入内容');
-//       return null
-//     }
-//     return {
-//       title,
-//       content,
-//       select,
-//       time,
-//       pv
-//     }
-//   }
-//   if (getPostValue()) {
-//     $.ajax({
-//       type: 'POST',
-//       url: '/posts',
-//       data: getPostValue(),
-//       success: function () {
-//         window.location.href = '/adposts';
-//         alert('添加成功')
-//       }
-//     })
-//   }
-// })

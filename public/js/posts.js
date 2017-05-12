@@ -45,7 +45,6 @@ window.onload = () => {
         let content = editor.$txt.html();
         let select = $('#select').val();
         let time = new Date().toLocaleString();
-        let pv = 0
         if (!title || !content) {
           alert('请输入内容');
           return null
@@ -55,7 +54,6 @@ window.onload = () => {
           content,
           select,
           title,
-          pv,
           img,
           time
         }

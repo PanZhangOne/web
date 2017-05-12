@@ -5,6 +5,7 @@
 window.onload = () => {
   recentFn();
   postMessage();
+  designerView();
 };
 const recentFn = function () {
   let btns = $('#js-btn > li');
@@ -26,8 +27,54 @@ const recentFn = function () {
           'transform': 'translate3d(-2280px,0,0)',
           'transition-duration': '1s'
         })
+      } else if (i == 3) {
+        views.css({
+          'transform': 'translate3d(-1140px,0,0)',
+          'transition-duration': '1s'
+        })
       }
     }
+  }
+};
+
+const designerView = function () {
+  let views = $('#designer-view');
+  let btns = $('#designer-avatar > li');
+
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].addEventListener('mouseover', function () {
+      if (i == 0) {
+        views.css({
+          'transform': 'translate3d(0px,0,0)',
+          'transition-duration': '1s'
+        })
+      } else if (i == 1) {
+        views.css({
+          'transform': 'translate3d(-440px,0,0)',
+          'transition-duration': '1s'
+        })
+      } else if (i == 2) {
+        views.css({
+          'transform': 'translate3d(-880px,0,0)',
+          'transition-duration': '1s'
+        })
+      } else if (i == 3) {
+        views.css({
+          'transform': 'translate3d(-1320px,0,0)',
+          'transition-duration': '1s'
+        })
+      } else if (i == 4) {
+        views.css({
+          'transform': 'translate3d(-1760px,0,0)',
+          'transition-duration': '1s'
+        })
+      } else if (i == 5) {
+        views.css({
+          'transform': 'translate3d(-2200px,0,0)',
+          'transition-duration': '1s'
+        })
+      }
+    })
   }
 };
 

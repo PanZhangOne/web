@@ -4,17 +4,26 @@ const router = express.Router();
 
 router.get('/', (req, res, next) => {
   const getValue = async function () {
-    let getINdexTop = require('../models/indexmodel').getIndexTop;
-    let getIndexMiddle = require('../models/indexmodel').getIndexMiddle;
-    let getComInfo = require('../models/com').getComInfo;
-    let doc = await getComInfo();
-    let posts = await getINdexTop();
-    let casePost = await getIndexMiddle();
-    res.render('index', {
-      doc,
-      posts,
-      casePost
-    })
+    try {
+      let getINdexTop = require('../models/indexmodel').getIndexTop;
+      let getIndexMiddle = require('../models/indexmodel').getIndexMiddle;
+      let getComInfo = require('../models/com').getComInfo;
+      let doc = await getComInfo();
+      let posts = await getINdexTop();
+      let casePost = await getIndexMiddle();
+      let designerModle = require('../models/indexmodel').getDesigner;
+      let designer = await designerModle();
+      // console.log(designer);
+      res.render('index', {
+        doc,
+        posts,
+        casePost,
+        designer
+      })
+    } catch (e) {
+      console.log(e);
+      return next
+    }
   }();
 });
 

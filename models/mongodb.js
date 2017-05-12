@@ -73,3 +73,27 @@ const serversScheam = mongoose.Schema({
 });
 const serversModel = mongoose.model('server', serversScheam);
 exports.serversModel = serversModel;
+
+// 设计师数据模型
+// const designer = mongoose.Schema({
+//   designername: String,  // 姓名
+//   experience: String,  // 工作年限 or 工作经验
+//   introduction: String,  // 个人简介
+//   honor: String,  // 个人荣誉
+//   avatar: String,  // 头像
+//   photo: String
+// });
+// const designerModel = mongoose.model('designer', designer);
+// exports.designerModel = designerModel;
+
+const designers = mongoose.Schema({
+  designername: String,  // 姓名
+  experience: String,  // 工作年限 or 工作经验
+  introduction: String,  // 个人简介
+  honor: String,  // 个人荣誉
+  avatar: String,  // 头像
+  photo: String  // 照片
+});
+
+const designersModel = mongoose.model('design', designers);
+exports.designersModel = designersModel;
