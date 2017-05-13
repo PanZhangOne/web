@@ -11,9 +11,8 @@ router.get('/', (req, res, next) => {
       let doc = await getComInfo();
       let posts = await getINdexTop();
       let casePost = await getIndexMiddle();
-      let designerModle = require('../models/indexmodel').getDesigner;
-      let designer = await designerModle();
-      // console.log(designer);
+      let designerModule = require('../models/indexmodel').getDesigner;
+      let designer = await designerModule();
       res.render('index', {
         doc,
         posts,

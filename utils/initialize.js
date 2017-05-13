@@ -21,11 +21,11 @@ const initAdmin = () => {
   let time = new Date();
 
   userModel.create({
-    title,
+    name,
     password,
     time
   }, (err, small) => {
-    if (err) return console.log(err)
+    if (err) return console.log(err);
     console.log('管理员账号初始化成功');
   })
 };
