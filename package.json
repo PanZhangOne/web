@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"supervisor index.js"
+    "dev": "supervisor index.js",
+    "test": "node --harmony ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +16,16 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "express-session": "^1.15.2",
+    "express-winston": "^2.4.0",
     "formidable": "^1.1.1",
     "install": "^0.8.8",
     "mongoose": "^4.9.3",
-    "npm": "^4.4.4"
+    "npm": "^4.4.4",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.1",
+    "supertest": "^3.0.0"
   }
 }
