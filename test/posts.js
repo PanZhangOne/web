@@ -4,7 +4,7 @@
 const path = require('path');
 const assert = require('assert');
 const request = require('supertest');
-const app = request('../index');
+const app = require('../index');
 const PostsModel = require('../models/mongodb').postModel;
 
 let testTitle = '测试文章';
@@ -31,6 +31,7 @@ describe('posts', function () {
         })
         .catch(done)
     });
+    // 删除测试文章
     afterEach(function (done) {
       PostsModel.remove({title: {$in: testTitle}})
         .exec()
@@ -39,5 +40,58 @@ describe('posts', function () {
         })
         .catch(done)
     });
+  });
+});
+
+describe('router test', function () {
+  it('test index page', function (done) {
+    request(app)
+      .get('/')
+      .expect('Content-Type', 'text/html; charset=utf-8')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) throw err;
+        done()
+      })
+  });
+  it('test server page', function (done) {
+    request(app)
+      .get('/server')
+      .expect('Content-Type', 'text/html; charset=utf-8')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) throw err;
+        done();
+      })
+  });
+  it('test about page', function (done) {
+    request(app)
+      .get('/about')
+      .expect('Content-Type', 'text/html; charset=utf-8')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) throw err;
+        done()
+      })
+  });
+  it('test contact page', function (done) {
+    request(app)
+      .get('/contact')
+      .expect('Content-Type', 'text/html; charset=utf-8')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) throw err;
+        done()
+      })
+  });
+  it('test gallery page', function (done) {
+    request(app)
+      .get('/gallery')
+      .expect('Content-Type', 'text/html; charset=utf-8')
+      .expect(200)
+      .end(function (err, res) {
+        if (err) throw err;
+        done()
+      })
   });
 });
