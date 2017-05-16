@@ -2,7 +2,6 @@
  * Created by zone0 on 2017/5/3.
  */
 'use strict';
-
 const mongoose = require('mongoose');
 const config = require('../config/config');
 mongoose.connect(config.mongodb);

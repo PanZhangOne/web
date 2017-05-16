@@ -4,19 +4,22 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
-const comInfoMode = require('../models/mongodb').comInfoMode;
 
 router.get('/', (req, res, next) => {
-  comInfoMode.findOne({_id: '590aacb7a982eb098c9d7cc6'}, (err, doc) => {
-    if (err) {
-      console.log(err);
-      return next;
+  const getValue = async function () {
+    try {
+      let getComInfo = require('../models/com').getComInfo;
+      let title = '关于-三扬装饰有限公司';
+
+      let doc = await getComInfo();
+      res.render('about', {
+        title,
+        doc
+      })
+    } catch (e) {
+      return next
     }
-    res.render('about', {
-      title: '关于-三扬装饰有限公司',
-      doc
-    })
-  });
+  }();
 });
 
 module.exports = router;

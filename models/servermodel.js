@@ -4,6 +4,10 @@
 'use strict';
 const serversModel = require('./mongodb').serversModel;
 
+/**
+ * 获取公司具体服务
+ * @return {Promise}
+ * */
 const getServers = function () {
   return new Promise((resolve, reject) => {
     serversModel.find({},['title', 'img', 'content'],{limit: 3}).sort({
